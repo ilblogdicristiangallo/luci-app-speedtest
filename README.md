@@ -53,5 +53,5 @@ Connect to your router via SSH (e.g., using PuTTY or Terminal) and execute the c
 #### 🟢 For OpenWrt 25.x and newer (`.apk` package):
 ```bash
 cd /tmp
-wget https://github.com/ilblogdicristiangallo/luci-app-speedtest/releases/download/v1.0.0/luci-app-speedtest_1.0.0-r1_all.apk
+wget https://github.com/ilblogdicristiangallo/luci-app-speedtest/releases/download/speedtest%2Capk%2Cipk%2Copenwrt%2Cluci%2C/luci-app-speedtest-1.0.0-r1.apk
 apk add --allow-untrusted luci-app-speedtest_1.0.0-r1_all.apk
