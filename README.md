@@ -44,6 +44,24 @@ Pre-compiled packages are available in the [Releases](https://github.com/ilblogd
 
 ---
 
+## ℹ️ Technical Note: Client-Side Testing & Wi-Fi Bottlenecks
+
+### ❓ Why does the speed test measure performance from my client device?
+
+`luci-app-speedtest` is a **Client-Side Web Application** executed directly by your web browser (Smartphone, PC, or Tablet) via the LuCI interface.
+
+#### 🔄 Complete Data Pipeline:
+`Internet (Cloudflare)` ➔ `Router WAN / Modem` ➔ `Wi-Fi or LAN Cable` ➔ `Client Device Browser`
+
+---
+
+### 📌 Key Considerations for Accurate Results:
+
+* 📶 **Wi-Fi Limitations:** If you run the test from a smartphone connected over Wi-Fi (especially on 2.4 GHz or distant 5 GHz connections), the result will reflect the maximum throughput of your **Wi-Fi link and phone hardware**, which may be lower than your router's actual WAN/Cellular speed.
+* 🔌 **Testing True WAN Capacity:** To measure the absolute maximum speed of your modem/WAN connection without wireless bottlenecks, always run the speed test from a **PC connected via a Gigabit Ethernet (LAN) cable**.
+* ⚡ **Why Client-Side Execution is Superior for Routers:** Running speed tests directly on a router's CPU (Server-Side CLI tools) can easily saturate low-power embedded SoCs (causing 100% CPU load) because CPU-bound tests bypass **Hardware Flow Offloading**. By running the test Client-Side, your router’s hardware acceleration handles the packet forwarding effortlessly, ensuring accurate high-speed measurement without overloading the router's CPU.
+
+
 ## 🛠️ Installation Guide
 
 ### Option 1: Direct Installation via SSH (Using `wget`)
